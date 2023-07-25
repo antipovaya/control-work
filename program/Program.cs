@@ -40,6 +40,22 @@ void PrintArray (string [] arrayToShow){
    
 }
 
+int CheckArray(string [] firstArray)
+{
+    int count = 0;
+    string element = String.Empty;
+
+    for (int i = 0; i < firstArray.Length; i++)
+    {
+        element = firstArray[i];
+        if (element.Length <= 3)
+        {
+            count++;
+        } 
+    }
+    return count;
+}
+
 
 // void EvenNumber (int [] arrayCreat){
 
@@ -55,5 +71,7 @@ void PrintArray (string [] arrayToShow){
 
 string [] Array = CreatArray();
 PrintArray(Array);
+int sum = CheckArray(Array);
+Console.WriteLine($"Количество элементов в массиве с длиной менее или равной трех: {sum}");
 // EvenNumber(Array);
 
