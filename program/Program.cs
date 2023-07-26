@@ -20,24 +20,25 @@ string [] CreatArray (){
         string username = Console.ReadLine()!;
         newArray [i] = username;
     }
-
+  
+    Console.WriteLine();
     return newArray;
+
 }
 
 
 void PrintArray (string [] arrayToShow){
 
-     Console.WriteLine ("Ваш массив: ");
-
+    Console.Write("[");
     for (int i = 0; i < arrayToShow.Length; i++)
     {
         if (i == arrayToShow.Length - 1){
-            Console.Write(arrayToShow[i] + ".");
+            Console.Write(arrayToShow[i] + "]");
         }
         else
         Console.Write(arrayToShow[i] + ", ");
     }
-   
+    
 }
 
 int CheckArray(string [] firstArray)
@@ -57,6 +58,24 @@ int CheckArray(string [] firstArray)
 }
 
 
+string [] SecondCreatArray (string [] firstArray, int count)
+{
+    string [] secondArray = new string [count];
+    int i = 0;
+   
+        for (int j = 0; j < firstArray.Length; j++)
+            {
+                if (firstArray[j].Length <= 3)
+                {
+                    secondArray[i] = firstArray[j];
+                    i++;
+                }
+            }
+
+    return secondArray;
+
+}
+
 // void EvenNumber (int [] arrayCreat){
 
 //     int count = 0;
@@ -69,9 +88,16 @@ int CheckArray(string [] firstArray)
 //     Console.Write($"-> {count}");
 // }
 
-string [] Array = CreatArray();
-PrintArray(Array);
-int sum = CheckArray(Array);
-Console.WriteLine($"Количество элементов в массиве с длиной менее или равной трех: {sum}");
-// EvenNumber(Array);
 
+string [] array = CreatArray();
+
+Console.WriteLine ("Ваш массив: ");
+PrintArray(array);
+int sum = CheckArray(array);
+Console.WriteLine ();
+Console.WriteLine($"Количество элементов в массиве длиной <  или = 3: {sum}");
+string [] newArray = SecondCreatArray(array, sum);
+Console.WriteLine ("Ваш массив c элементами длиной <  или = 3: ");
+
+PrintArray(newArray);
+if (sum ==0) Console.Write("]");
