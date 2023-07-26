@@ -44,12 +44,10 @@ void PrintArray (string [] arrayToShow){
 int CheckArray(string [] firstArray)
 {
     int count = 0;
-    string element = String.Empty;
 
     for (int i = 0; i < firstArray.Length; i++)
     {
-        element = firstArray[i];
-        if (element.Length <= 3)
+        if (firstArray[i].Length <= 3)
         {
             count++;
         } 
