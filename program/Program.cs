@@ -76,17 +76,7 @@ string [] SecondCreatArray (string [] firstArray, int count)
 
 }
 
-// void EvenNumber (int [] arrayCreat){
 
-//     int count = 0;
-//     for (int i = 0; i < arrayCreat.Length; i++){
-//         if (arrayCreat[i] % 2 == 0){
-//             count++;
-//         }
-//     }
-
-//     Console.Write($"-> {count}");
-// }
 
 
 string [] array = CreatArray();
